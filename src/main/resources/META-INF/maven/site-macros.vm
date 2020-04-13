@@ -587,6 +587,25 @@ $indent     </ul>##
 #end
 ##
 #macro ( googleSearch $top )
+#if( $decoration.getCustomChild( 'fluidoSkin.googleSearch.customSearch' ) )
+#**##set( $searchId = $decoration.getCustomValue( 'fluidoSkin.googleSearch.customSearch' ) )
+    <div id="search-form" class="navbar-search pull-right">
+      <script type="text/javascript">
+      var cx = '$searchId';
+
+      (function() {
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+
+      </script>
+      <gcse:search></gcse:search>
+  </div>
+#else
 <form id="search-form" action="https://www.google.com/search" method="get" #if ( $top ) class="navbar-search pull-right" #end>
 #**##if( $decoration.getCustomChild( 'fluidoSkin.googleSearch.sitesearch' ) )
 #*  *##set( $sitesearchValue = $decoration.getCustomValue( 'fluidoSkin.googleSearch.sitesearch' ) )
@@ -598,6 +617,7 @@ $indent     </ul>##
   <input class="search-query" name="q" id="query" type="text" />
 </form>
 <script>asyncJs( 'https://cse.google.com/brand?form=search-form' )</script>
+#end
 #end
 ##
 #macro ( forkMeOnGitHub )

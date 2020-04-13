@@ -86,7 +86,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </a>
-          <nav class="nav-collapse">
+          <div class="nav-collapse">
 #*      *##else
             <div class="container">
               <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
@@ -94,7 +94,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </a>
-          <nav class="nav-collapse">
+              <div class="nav-collapse">
 #*      *##end
 #*    *##end
 #*    *##if ( $decoration.getCustomChild( 'fluidoSkin.topBarIcon' ) )
